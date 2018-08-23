@@ -11,6 +11,7 @@ $user_answers = array();
         if (isset($_POST[$option_name])) {
             $option = $_POST[$option_name];
             echo $option;
+            array_push($user_answers, $option);
         } else {
             $option = null;
         }
