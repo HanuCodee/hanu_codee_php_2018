@@ -22,9 +22,6 @@
 					'question1'=> array('2. Content of questions 2:', 'A: answer A', 'B: answer B ', 'C: answer C ', 'D: answer D'),
 					'question2'=> array('2. Content of questions 2:', 'A: answer A', 'B: answer B ', 'C: answer C ', 'D: answer D'),
 					'question3'=> array('3. Content of questions 3:', 'A: answer A', 'B: answer B ', 'C: answer C ', 'D: answer D'),
-					'question4'=> array('4. Content of questions 4:', 'A: answer A', 'B: answer B ', 'C: answer C ', 'D: answer D'),
-					'question5'=> array('5. Content of questions 5:', 'A: answer A', 'B: answer B ', 'C: answer C ', 'D: answer D'),
-					'question6'=> array('6. Content of questions 6:', 'A: answer A', 'B: answer B ', 'C: answer C ', 'D: answer D'),
 				),
 				'correctans'=> array(
 					'question1' => 'correctans1',
