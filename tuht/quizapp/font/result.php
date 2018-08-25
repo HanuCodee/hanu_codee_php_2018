@@ -48,6 +48,7 @@
 </style>
 <body>
 <table>
+	//edit khac dong//
 	<tr>
 		<th>Score</th>
 		<th>Level</th>
