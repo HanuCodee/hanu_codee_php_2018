@@ -49,6 +49,7 @@
 <body>
 <table>
 	//edit khac dong//
+	///edit cung dong //
 	<tr>
 		<th>Score</th>
 		<th>Level</th>
