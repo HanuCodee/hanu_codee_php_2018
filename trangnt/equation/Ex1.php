@@ -8,6 +8,7 @@ ptb1($a, $b, $msg);
 }
 else{
     $error = 'a and b are required !';
+    //try conflict
 }
 ?>
 
