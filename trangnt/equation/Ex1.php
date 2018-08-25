@@ -40,7 +40,7 @@ legend{
 }
 
 p.error{
-    color: red;
+    color: blue; //sửa ở đây :>
     display: block;
     min-height: 50px;
     background: yellow;
