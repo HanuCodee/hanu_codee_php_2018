@@ -31,9 +31,9 @@ function ptb1($a, $b,$msg){
     return $msg; 
 }
 /**
-*@modifies: $a, $b, $c
-*@requires: $a, $b ,$c are not null /\ are numeric
-*@effects:
+@modifies: $a, $b, $c
+@requires: $a, $b ,$c are not null /\ are numeric
+@effects:
     if $a eq 0{
         include #ptb1
     }else{
@@ -70,7 +70,8 @@ function ptb2($a, $b , $c, $msg){
         } 
     }
     else{
-	   ptb1($b, $c);
+	   ptb1($b, $c,$msg);
+       return $msg;
 	}
 return $msg;
 }

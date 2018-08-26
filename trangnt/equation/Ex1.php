@@ -8,7 +8,6 @@ ptb1($a, $b, $msg);
 }
 else{
     $error = 'a and b are required !';
-    //try conflict
 }
 ?>
 
@@ -39,9 +38,8 @@ legend{
     /*font-size:...vw: the the size of text will follow the size of browser page*/
 }
 
-p.error{
-    color: blue; //sửa ở đây :>
-    display: block;
+p.err{
+    color: red;
     min-height: 50px;
     background: yellow;
     font-weight:bold;
@@ -56,24 +54,26 @@ p.info {
        <form action="" method="GET">
         <fieldset>
             <legend>ax + b = 0 equation</legend>
-            <?php if ($error): // 0/[]/null/'' ?>
-            <p class="error"><?php echo $error ?></p>
-            <?php endif; ?>
             <p>   
                 <label for="a">a: </label>
                 <input autofocus="true" type="number" id="a" name="a" value="<?php echo isset($_GET['a']) ? $_GET['a']:''; ?>" placeholder="enter a...">
-                <!--'dk ? a : b'-->
+                <!--'dk ? a : b ;'-->
             </p>
             <p>
                 <label for="b">b: </label>
-                <input type="number" name="b" id="b" value="<?php echo isset($_GET['b']) ? $_GET['b'] : ''; ?>" placeholder="enter b...">
-            </p>
-            <input type="submit" name="exe" value="Execute">
-            <?php if ($msg): ?>
-            <p class="info"><?php echo $msg ?></p>
-            <?php endif; ?>
+                <input type="number" name="b" id="b" value="<?php echo isset($_GET['b']) ? $_GET['b'] : ''; ?>" placeholder="enter b..."> <br><br>
+                <?php  if($error): ?>
+                <p class = "err"><?php echo $error; ?></p> 
+                <?php endif; ?>
+
+                <?php  if($msg): ?>
+                <p class = "info"><?php echo $msg;?></p>
+                <?php endif;  ?>
+
+                <input style="text-align: center;" type="submit" value="Execute">
         </fieldset>
         <br>
+    
     </form>
 </body>
 </html>

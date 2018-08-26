@@ -1,32 +1,19 @@
 <?php
 include('function.php');
-$mess = $err = null;
+$mess = $err = '';
 //$a = $b = $c ='';
-        if (isset($_GET['a'], $_GET['b'], $_GET['c'])) {
-            // dynamic typing
-            $i=0; // '0' true [1,2,3]
+        if (isset($_GET['a']) && isset($_GET['b']) && isset( $_GET['c'])) {
+            $i=0;
             var_dump($i);
             
             $a = $_GET['a'];
             $b = $_GET['b'];
             $c = $_GET['c'];
-
-            if (is_numeric($a) && is_numeric($b)&&is_numeric($c)) {
-                ptb2($_GET['a'], $_GET['b'], $_GET['c']);
-                
-            }
-
-            else{
-                
-                $err='a b c must be number.';
-            }
-        }
-        else{
-            $err='a b c are required.';
-        }
-
-
-            ?>
+             ptb2($a, $b, $c, $mess);
+        }else{
+        $err='a b c are required !';
+    }
+?>
 
 
 <!DOCTYPE html>
@@ -58,7 +45,7 @@ $mess = $err = null;
             color: red;
             text-align: center;
         }
-        p.mss{
+        p.msg{
             color: green;
             text-align: center;
         }
