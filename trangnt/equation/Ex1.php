@@ -8,6 +8,7 @@ ptb1($a, $b, $msg);
 }
 else{
     $error = 'a and b are required !';
+    //try conflict
 }
 ?>
 
@@ -39,7 +40,7 @@ legend{
 }
 
 p.error{
-    color: red;
+    color: blue; //sửa ở đây :>
     display: block;
     min-height: 50px;
     background: yellow;
