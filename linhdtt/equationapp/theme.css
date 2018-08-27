@@ -1,5 +1,5 @@
 body {
-	background-image: url(background.jpg);
+	background-image: url(img/background.jpg);
 	font-size: 1em;
 	font: Georgia, "Times New Roman", Times, serif;
 	text-align: left;
@@ -141,4 +141,9 @@ li a, u1 a{
 }
 .dropdown:hover .dropbtn {
     background-color: inherit;
+}
+.footer {
+	padding: 10px 0;
+	position: relative;
+	clear: both;
 }

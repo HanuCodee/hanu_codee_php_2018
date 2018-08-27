@@ -1,6 +1,6 @@
 
 <?php
-$msg = $error = null;
+ $root= $error = null;
 if (isset ($_GET['a']) && ($_GET['b'])) {
 	$a = $_GET ['a'];
 	$b = $_GET ['b'];
@@ -77,7 +77,7 @@ if (isset ($_GET['a']) && ($_GET['b'])) {
         		<td> <input class="nhap" type="text" name="b" size="30" placeholder="enter a number" /> </td>
         	</tr>
         </table>
-        <h3 class="msg"> <?php echo $msg ?></h3>
+        <h3 class="msg"> <?php echo $root ?></h3>
          <input type="submit" value="Submit"  />
          <input type="reset" value="Reset"/>
         </form>

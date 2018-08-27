@@ -48,6 +48,8 @@
 </style>
 <body>
 <table>
+	//edit khac dong//
+	///edit cung dong //
 	<tr>
 		<th>Score</th>
 		<th>Level</th>
@@ -60,5 +62,6 @@
 		<th colspan="2"><button id="back"><a href="ex3w2.php">back to quiz</a></button></th>
 	</tr>
 </table>
+	// edit file demoo //
 </body>
 </html>

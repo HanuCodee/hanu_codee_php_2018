@@ -5,7 +5,7 @@
 @required 
 * a b c are numeric
 */ 
-$msg = null;
+$msg = $root =null;
 //giai phuong trinh bac 1
 /*
 @effects

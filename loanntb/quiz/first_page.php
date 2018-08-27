@@ -43,7 +43,11 @@ if (isset($_POST['cont'])) {
     get_answer();
     $_SESSION['page1_option_list'] = $user_answers;
     $_SESSION['no_of_ques_pg1'] = $no_of_ques;
+<<<<<<< HEAD
     header("Location: second_page.php");
+=======
+    header("Location: http://localhost/codee/week3/quiz/second_page.php");
+>>>>>>> de0e1758b8b1d27743502bc99247ab8352e32d39
 }
 
 ?>

@@ -1,5 +1,5 @@
 <?php
- $msg = $error = null;
+$root= $error = null;
 if(isset($_GET['a']) && isset($_GET['b']) && isset($_GET['c'])){
 	$a = $_GET['a'];
 	$b = $_GET['b'];
@@ -96,8 +96,8 @@ if($a == 0){
                 <td> <input class="nhap" type="text" name="c" size="30" placeholder="enter a number" /> </td>
             </tr>
         </table>
-        <?php if($msg): ?>
-<h3 class="msg"><?php echo $msg ?></h3>
+        <?php if($root): ?>
+<h3 class="msg"><?php echo $root ?></h3>
          <?php endif; ?>
 <input type="submit" value ="Submit"/>
 <input type="reset" value="Reset"/>
