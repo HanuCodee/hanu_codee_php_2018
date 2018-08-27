@@ -8,7 +8,7 @@ include ('function.php');
         equation1($a, $b, $error);
     }
 if (isset($_POST['back'])) {
-    header("Location: http://localhost/codee/bichloan/hanu_codee_php_2018/loanntb/equation/home.php");
+    header("Location:home.php");
 }
 ?>
 <!DOCTYPE html>

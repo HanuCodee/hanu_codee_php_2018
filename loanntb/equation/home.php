@@ -1,8 +1,8 @@
 <?php
 if (isset($_POST['1st'])) {
-    header("Location: http://localhost/codee/bichloan/hanu_codee_php_2018/loanntb/equation/equation1.php");
+    header("Location: equation1.php");
 } else if (isset ($_POST['2nd'])) {
-    header("Location: http://localhost/codee/bichloan/hanu_codee_php_2018/loanntb/equation/equation2.php");
+    header("Location: equation2.php");
 }
 
 /* note w3 (about array)

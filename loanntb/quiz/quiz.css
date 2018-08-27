@@ -21,6 +21,7 @@ mark {
     border: 2px black solid;
 }
 table {
+    padding-left: 20px;
     /*border: 1px black solid;*/
 }
 table th {
@@ -29,6 +30,10 @@ table th {
 }
 table td {
     padding: 7px 5px 7px 0px;
+    /*border: 1px blue solid;*/
+}
+table tr {
+    /* padding-left: 50px; */
     /*border: 1px blue solid;*/
 }
 #title {
@@ -44,6 +49,7 @@ table td {
 }
 button {
     margin-top: 10px;
+    margin-left: 20px;
     background-color: #b3b3ff;
     padding: 7px;
     border: 1px solid #3366ff;
