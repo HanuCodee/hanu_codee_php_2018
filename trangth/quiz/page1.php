@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (isset($_POST['next'])){
+	$_SESSION ['choose']=$_POST['choose'];
+}
 $question = array(
 'Q1' => array('content'=>'Rose or blossom cherry or cherry or camilla', 'a'=>'Rose', 'b'=>'Blossom cherry', 'c'=>'Cherry', 'd'=>'Camilla','correct'=>'Blossom Cherry'),
 'Q2' => array('content'=>'Content of question 2', 'a'=>'Answer A', 'b'=>'Answer B', 'c'=>'Answer C', 'd'=>'Answer D','correct'=>'B'),
@@ -25,7 +29,8 @@ $question = array(
 'Q23' => array('content'=>'Content of question 23', 'a'=>'Answer A', 'b'=>'Answer B', 'c'=>'Answer C', 'd'=>'Answer D','correct'=>'B'),
 'Q24' => array('content'=>'Content of question 24', 'a'=>'Answer A', 'b'=>'Answer B', 'c'=>'Answer C', 'd'=>'Answer D','correct'=>'B'),
 'Q25' => array('content'=>'Content of question 25', 'a'=>'Answer A', 'b'=>'Answer B', 'c'=>'Answer C', 'd'=>'Answer D','correct'=>'B'),
- )
+ );
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,12 +42,14 @@ $question = array(
 			width: 700px;
 			margin-left:400px;
 			padding: 15px;
-			border: 2px solid grey;
+			
 			border-radius: 10px;
+			align-content: center;
+			background-color: #ffddb3;
         }
 		.qus{
 			text-align: left;
-			margin-left: 130px;
+			margin-left: 100px;
 			background-color: #669966;
 			color: white;
 			width: 500px;
@@ -60,10 +67,8 @@ $question = array(
 			margin-left: 170px;
 		}
 		.next{
-			font-size: 1em;
-			height: 30px;
-			width: 60px;
-			background-color: lightyellow;
+			font-size: 0.9em;
+			background-color: #ffbbd3;
 			 box-shadow: 2px 2px grey;
 			 border-radius: 5px;
 	
@@ -76,17 +81,17 @@ $question = array(
 	<h1 align="center">Quiz</h1>
 </head>
 <body>
-<form class="quiz" action="page2_w2.php" method="_GET">
+<form class="quiz" action="page2_w2.php" method="_POST">
 		<?php foreach ($question as $key => $value){ ?>
 		
 		<h3 class="qus">Question: <?php echo $value['content'] ?></h3> 
-				<input class="chs" type="radio" /><label name="q1" id="q1a"> </label><?php echo $value['a'] ?>
-				<input class="chs" type="radio" /><label name="q1" id="q1b"> </label><?php echo $value['b'] ?>
-				<input class="chs" type="radio"/><label name="q1" id="q1c"> </label><?php echo $value['c'] ?>
-				<input class="chs" type="radio"/><label name="q1" id="q1d"> </label><?php echo $value['d'] ?>
-				
+				<input class="chs" type="radio" /><label name="choose" id="a"> </label><?php echo $value['a'] ?>
+				<input class="chs" type="radio" /><label name="choose" id="b"> </label><?php echo $value['b'] ?>
+				<input class="chs" type="radio"/><label name="choose" id="c" > </label><?php echo $value['c'] ?>
+				<input class="chs" type="radio"/><label name="choose" id="d" > </label><?php echo $value['d'] ?>
 		<?php } ?>
 </form>
-    <h3 align="center"><button class="next" ><a href="page2_w2.php">Next</a></button></h3>
+    <h3 align="center"><button class="next" name="next"><a href="page2_w2.php">Next questions</a></button></h3>
 </body>
 </html>
+ 
