@@ -30,8 +30,11 @@ $questions = array(
 '28' => array('content'=>'Noi dung cau hoi 28', 'a'=>'Answer A', 'b'=>'Answer B', 'c'=>'Answer C', 'd'=>'Answer D', 'correct'=>'A'),
 '29' => array('content'=>'Noi dung cau hoi 29', 'a'=>'Answer A', 'b'=>'Answer B', 'c'=>'Answer C', 'd'=>'Answer D', 'correct'=>'A'),
 '30' => array('content'=>'Noi dung cau hoi 30', 'a'=>'Answer A', 'b'=>'Answer B', 'c'=>'Answer C', 'd'=>'Answer D', 'correct'=>'A'),
-)
+);
 ?>
+
+<?php $correct_answer = array(); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,11 +77,18 @@ $questions = array(
 			<td><?php echo $v['d'] ?></td>
 			<td><?php echo $v['correct'] ?></td>
 			<td><div action="" method="GET"><input type="button" name="dl" value="Delete"></div>
-			    <divaction="" method="GET" ><input type="button" name="rs" value="Reset"></div>
+			    <div action="" method="GET" ><input type="button" name="rs" value="Reset"></div>
 			</td>
 
 		</tr>
-		   <?php } ?>
+		   <?php 
+		   array_push($correct_answer, $v['correct']);
+		   $length = count($correct_answer);
+		   for($i = 0; $i < length; $i++){
+		   	 echo $correct_answer[$i];
+		   }
+		    } 
+		   ?>
 	</table>
 	
 </form>

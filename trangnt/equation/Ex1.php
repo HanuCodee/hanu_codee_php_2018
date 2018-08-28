@@ -1,14 +1,16 @@
 <?php
 include "function.php";
 $msg= $error = '';
-if(isset($_GET['a']) && isset($_GET['b'])){
-$a = $_GET['a'];
-$b = $_GET['b'];
-ptb1($a, $b, $msg);
-}
-else{
-    $error = 'a and b are required !';
-}
+if(isset($_GET['exe'])):
+    if(isset($_GET['a']) && isset($_GET['b'])){
+        $a = $_GET['a'];
+        $b = $_GET['b'];
+        $msg = ptb1($a, $b, $msg);
+    }
+    else{
+        $error = 'a and b are required !';
+    }
+endif;
 ?>
 
 <!DOCTYPE html>
@@ -45,8 +47,9 @@ p.err{
     font-weight:bold;
 }
 p.info {
-    color: blue;
+    color: green;
     font-weight:bold;
+    background-color: linen;
 }
 </style>
 
@@ -70,7 +73,7 @@ p.info {
                 <p class = "info"><?php echo $msg;?></p>
                 <?php endif;  ?>
 
-                <input style="text-align: center;" type="submit" value="Execute">
+                <input style="text-align: center;" name="exe" type="submit" value="Execute">
         </fieldset>
         <br>
     
