@@ -1,6 +1,9 @@
 <?php
-
+$error = null;
+$a = $b = $c = null;
+$result = '';
 function app2 ($a,$b,$c,$result){
+    global $result, $a, $b, $c;
     if ($a == 0) {
             // pt bac nhat
             if ($b == 0) {

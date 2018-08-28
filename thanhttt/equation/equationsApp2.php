@@ -3,9 +3,9 @@
   Find the solution of the quadratic equation: ax^2 + bx + c = 0
  */
 include "function.php";
-$error = null;
-$a = $b = $c = '';
-$result = '';
+//$error = null;
+//$a = $b = $c = null;
+//$result = '';
 if (isset($_GET['a'], $_GET['b'], $_GET['c'])) {
     // dynamic typing
     $i = 0; // '0' true [1,2,3]
@@ -16,32 +16,32 @@ if (isset($_GET['a'], $_GET['b'], $_GET['c'])) {
     $c = $_GET['c'];
 
     if (is_numeric($a) && is_numeric($b) && is_numeric($b)) {
-//        app2 ($a,$b,$c,$result);
-            if ($a == 0) {
-            // pt bac nhat
-            if ($b == 0) {
-                if ($c == 0) {
-                    $result = 'All values of x are correct';
-                } else {
-                    $result = 'Math Error!';
-                }
-            } else {
-                $root = -$c / $b;
-                $result = 'The equation has one root x = ' . $root;
-            }
-        } else { // pt bac 2
-            $delta = $b * $b - 4 * $a * $c;
-            if ($delta == 0) {
-                $root = -$b / (2 * $a);
-                $result = 'The equation has one root x = ' . $root;
-            } else if ($delta > 0) {
-                $x1 = (-$b + sqrt($delta)) / (2 * $a);
-                $x2 = (-$b - sqrt($delta)) / (2 * $a);
-                $result = 'The root of equation: x1 = ' . $x1 . ' and x2 = ' . $x2;
-            } else {
-                $result = 'No solution';
-            }
-        }
+        app2($a,$b,$c,$result);
+//            if ($a == 0) {
+//            // pt bac nhat
+//            if ($b == 0) {
+//                if ($c == 0) {
+//                    $result = 'All values of x are correct';
+//                } else {
+//                    $result = 'Math Error!';
+//                }
+//            } else {
+//                $root = -$c / $b;
+//                $result = 'The equation has one root x = ' . $root;
+//            }
+//        } else { // pt bac 2
+//            $delta = $b * $b - 4 * $a * $c;
+//            if ($delta == 0) {
+//                $root = -$b / (2 * $a);
+//                $result = 'The equation has one root x = ' . $root;
+//            } else if ($delta > 0) {
+//                $x1 = (-$b + sqrt($delta)) / (2 * $a);
+//                $x2 = (-$b - sqrt($delta)) / (2 * $a);
+//                $result = 'The root of equation: x1 = ' . $x1 . ' and x2 = ' . $x2;
+//            } else {
+//                $result = 'No solution';
+//            }
+//        }
     } else {
         $error = 'a b c must be numeric.';
     }
@@ -103,9 +103,9 @@ if (isset($_GET['a'], $_GET['b'], $_GET['c'])) {
         <input type="number" name="c" id="c">
     </p>-->
                 <p>
-                    <input autofocus="true" type="number" style="width: 20px" name="a" id="a" value="<?php echo $_GET['a'] ?>"> x <sup>2</sup>
-                    + <input type="number" style="width: 20px" name="b" id="b" value="<?php echo $_GET['b'] ?>">x
-                    +<input type="number" style="width: 20px" name="c" id="c" value="<?php echo $_GET['c'] ?>"> = 0
+                    <input autofocus="true" type="number" style="width: 50px" name="a" id="a" value="<?php echo $_GET['a'] ?>"> x <sup>2</sup>
+                    + <input type="number" style="width: 50px" name="b" id="b" value="<?php echo $_GET['b'] ?>">x
+                    +<input type="number" style="width: 50px" name="c" id="c" value="<?php echo $_GET['c'] ?>"> = 0
                 </p>
                 <br></br>
                 <input type="submit" name="exe" value="Caculate">
