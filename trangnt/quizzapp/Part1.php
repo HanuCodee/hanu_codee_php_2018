@@ -1,6 +1,7 @@
 
 <?php
 session_start();
+$user_answer = array();
 $questions1 = array(
 '1' => array('content'=>'Noi dung cau 1', 'a'=>'Answer A', 'b'=>'Answer B', 'c'=>'Answer C', 'd'=>'Answer D','correct'=>'A'),
 '2' => array('content'=>'Noi dung cau 2', 'a'=>'Answer A', 'b'=>'Answer B', 'c'=>'Answer C', 'd'=>'Answer D','correct'=>'B'),
@@ -16,20 +17,16 @@ $questions1 = array(
 '12' => array('content'=>'Noi dung cau 12', 'a'=>'Answer A', 'b'=>'Answer B', 'c'=>'Answer C', 'd'=>'Answer D','correct'=>'B'),
 '13' => array('content'=>'Noi dung cau 13', 'a'=>'Answer A', 'b'=>'Answer B', 'c'=>'Answer C', 'd'=>'Answer D','correct'=>'B'),
 '14' => array('content'=>'Noi dung cau 14', 'a'=>'Answer A', 'b'=>'Answer B', 'c'=>'Answer C', 'd'=>'Answer D','correct'=>'B'),
-'15' => array('content'=>'Noi dung cau 15', 'a'=>'Answer A', 'b'=>'Answer B', 'c'=>'Answer C', 'd'=>'Answer D','correct'=>'B'),
+'15' => array('content'=>'Noi dung cau 15', 'a'=>'Answer A', 'b'=>'Answer B', 'c'=>'Answer C', 'd'=>'Answer D','correct'=>'B')
 )
 ?>
-<?php
-$user_answer = array();
-if(isset($_GET['']))
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Qizz p1</title>
 	<meta charset="UTF-8">
 	<style>
-	form{}
 	fieldset{
 		/*text-align: center;*/
 		padding: 100px 100px;
@@ -81,9 +78,7 @@ if(isset($_GET['']))
 		width:100%;
 		display: block;
 	}
-	.bt{
-		text-align:center;
-	}
+	
 
 	</style>
     
@@ -103,31 +98,35 @@ if(isset($_GET['']))
 	<form action="Part2.php" method="GET">
 	<fieldset>
 		<legend><i><h1 style="color: yellow">Part 1:</h1></i></legend>
-	<ol type="number">
 		<?php foreach ($questions1 as $k => $v){ ?>
 		
-		<li>Question:</li><?php echo $v['content'] ?><br>
+		<?php echo $k . ": "?><?php echo $v['content'] ?><br>
 			<p>
-				<label for="qa"> <input type="radio" name="q" id="qa" value="answerA"><?php echo $v['a'] ?></label><br>
-				<label for="qb"><input type="radio" name="q" id="qb" value="answerB"><?php echo $v['b'] ?></label><br>
-				<label for="qc"><input type="radio" name="q" id="qc" value="answerC"><?php echo $v['c'] ?></label><br>
-				<label for="qd"><input type="radio" name="q" id="qd" value="answerD"><?php echo $v['d'] ?></label><br>
+				<label for="qa"> <input type="radio" name="que1" id="qa" value="answerA"><?php echo $v['a'] ?></label><br>
+				<label for="qb"><input type="radio" name="que1" id="qb" value="answerB"><?php echo $v['b'] ?></label><br>
+				<label for="qc"><input type="radio" name="que1" id="qc" value="answerC"><?php echo $v['c'] ?></label><br>
+				<label for="qd"><input type="radio" name="que1" id="qd" value="answerD"><?php echo $v['d'] ?></label><br>
 				<label for="q"><input type="hidden" value=""><br>
 			</p>
 
 		<?php 
+		} 
 		// echo $_GET['q'];
-		array_push($user_answer, $_GET['q']);
-	} ?>
-		</ol>
+		for($i=0; $i < $k; $i++){
+			if(isset($_GET['que1'.$k])){
+			array_push($user_answer,$_GET['que1'.$k]);
+			}
+		}
+		$_SESSION['answers'] = $user_answer;
+		?>
+		
 	</fieldset>
-	<div class="bt">
-		<input style="background:orange; width: 100px; height: 30px;" type="submit" name="part1" value="CONTINUE">
+	<div style="text-align: center">
+		<input style="background-color: orange;width: 100px;height: 30px;" type="submit" name="continue" value="CONTINUE">
 	</div>
 	</form>
- <?php
+ 
 
- ?>
 </body>
 </html>
 <!--IBM

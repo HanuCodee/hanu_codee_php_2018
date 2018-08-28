@@ -16,18 +16,26 @@
     }
  */
 function ptb1($a, $b,$msg){
-
-	if($a != 0){
-           $root = -$b / $a;
-           $msg = 'root x = '.$root;
-       }else{
+    if(is_numeric($a) && is_numeric($b)){
+        if($a != 0){
             if($b != 0){
-               $msg = 'This equation can not be solved.';
-            }
-            else{
-             $msg = 'This equation is true with all value of x.';
+               $root = -$b / $a;
+               $msg = 'root x = '.$root;
+            }else{
+                $msg ="This equation has only one root is x=0.";
             }
         }
+        else{
+            if($b == 0){
+                $msg = 'This equation is true with all value of x.';
+            }
+            else{
+                $msg = 'This equation can not be solved.';
+            }
+        }
+    }else{
+        $error = "a and b must be a number! .";
+    }
     return $msg; 
 }
 /**
@@ -51,6 +59,7 @@ function ptb1($a, $b,$msg){
     }
 */
 function ptb2($a, $b , $c, $msg){
+    if(is_numeric($a) && is_numeric($b) && is_numeric($c) ){
 	if($a != 0){
         //pt bac hai
     
@@ -73,6 +82,9 @@ function ptb2($a, $b , $c, $msg){
 	   ptb1($b, $c,$msg);
        return $msg;
 	}
+}else{
+    $error = "a, b and c must be number! .";
+}
 return $msg;
 }
 ?>

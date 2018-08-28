@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $questions2 = array(
 '16' => array('content'=>'Noi dung cau hoi 16', 'a'=>'Answer A', 'b'=>'Answer B', 'c'=>'Answer C', 'd'=>'Answer D', 'correct'=>'A'),
 '17' => array('content'=>'Noi dung cau hoi 17', 'a'=>'Answer A', 'b'=>'Answer B', 'c'=>'Answer C', 'd'=>'Answer D', 'correct'=>'A'),
@@ -24,10 +26,7 @@ $questions2 = array(
 	<title>Qizz p2</title>
 	<meta charset="UTF-8">
 	<style>
-	form{
-		text-align: center;
-
-	}
+	
 	fieldset{
 		/*text-align: center;*/
 		padding: 100px 100px;
@@ -95,27 +94,33 @@ $questions2 = array(
 	<form action="Result.php" method="GET">
 	<fieldset>
 		<legend><i><h1 style="color: yellow">Part 2:</h1></i></legend>
-	<ol type="number" start="16">
 		<?php foreach($questions2 as $k=>$v){ ?>
 		
-		<li>Question:</li><?php echo $v['content'] ?><br>
+		<?php echo $k .": "?><?php echo $v['content'] ?><br>
 			<p>
-				<input type="radio" name="q11" id="q11a"><?php echo $v['a'] ?><br>
-				<input type="radio" name="q11" id="q11b"><?php echo $v['b'] ?><br>
-				<input type="radio" name="q11" id="q11c"><?php echo $v['c'] ?><br>
-				<input type="radio" name="q11" id="q11d"><?php echo $v['d'] ?><br>
+				<input type="radio" name="que2" id="a"><?php echo $v['a'] ?><br>
+				<input type="radio" name="que2" id="b"><?php echo $v['b'] ?><br>
+				<input type="radio" name="que2" id="c"><?php echo $v['c'] ?><br>
+				<input type="radio" name="que2" id="d"><?php echo $v['d'] ?><br>
 				
 			</p>
-		<?php } ?>
+		<?php } 
+		for($i=0; $i<$k; $i++){
+			if(isset($_GET['que2'.$k])){
+			array_push($user_answer,$_GET['que2'.$k]);
+			}
+		} ?>
 		
-		</ol>
 	</fieldset>
+	<div <style="text-align:center">
+		
+	</style>>
 		<input style="background: orange; width: 100px; height: 30px;" type="submit" name="part2" value="RESULT">
-	</form>
 	<br>
 	<form action="Part1.php" method="GET">
 		<input style="background: orange; width: 150px; height: 30px;" type="submit" value="BACK TO PART 1">
 	</form>
+	</div>
  <?php
 
  ?>

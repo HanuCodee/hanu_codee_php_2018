@@ -1,6 +1,6 @@
 <?php
 include('function.php');
-$mess = $err = '';
+$msg = $err = '';
 //$a = $b = $c ='';
         if (isset($_GET['a']) && isset($_GET['b']) && isset( $_GET['c'])) {
             $i=0;
@@ -9,9 +9,9 @@ $mess = $err = '';
             $a = $_GET['a'];
             $b = $_GET['b'];
             $c = $_GET['c'];
-             ptb2($a, $b, $c, $mess);
+            $msg =  ptb2($a, $b, $c, $msg);
         }else{
-        $err='a b c are required !';
+            $err ='a b c are required !';
     }
 ?>
 
@@ -44,10 +44,12 @@ $mess = $err = '';
         p.err{
             color: red;
             text-align: center;
+            background-color: linen;
         }
-        p.msg{
+        p.mss{
             color: green;
             text-align: center;
+            background-color: linen;
         }
 
     </style>
@@ -71,9 +73,9 @@ $mess = $err = '';
                 <label for="c">c: </label>
                 <input type="number" id="c" name="c" value="<?php echo isset($_GET['c']) ? $_GET['c'] : '' ?>" placeholder="enter c...">
             </p>
-            <?php if($mess) ?>
-            <p class="mss"><?=$mess ?></p>
-            <input type="submit" value="Execute">
+            <?php if($msg) ?>
+            <p class="mss"><?=$msg ?></p>
+            <input type="submit" name="exe" value="Execute">
         </fieldset>
     </form>
 
