@@ -4,7 +4,7 @@ if(isset($_GET['a']) && isset($_GET['b']) && isset($_GET['c'])){
 	$a = $_GET['a'];
 	$b = $_GET['b'];
 	$c = $_GET['c'];
-	if(is_numeric($a) && is_numeric($b) && is_numeric($c)){
+	if(is_numeric($a) && is_numeric($b) && is_numeric($c)) {
 		include ("function_cal.php");
 		 $root = equation2($a,$b,$c);
 			/*$delta = $b*$b - 4*$a*$c;
@@ -63,9 +63,8 @@ if($a == 0){
 		height: 30px;
 	}
 	.khung {
-		background: #ffeea3;
-		border: 2px solid green;
-}
+                border-radius: 3px;
+            }
 	.error{
 		text-align: center;
 		color: red;
@@ -82,7 +81,7 @@ if($a == 0){
 <body>
 <form class="eq2" method="_get">
 	<h3 class= "error"><?php echo $error?></h3>
-<table align="center" cellpadding="8" cellspacing="8" border="2" >
+<table align="center" cellpadding="8" cellspacing="8">
             <tr>
                 <td class="khung"> Enter a </td>
                 <td> <input class="nhap" type="text" name ="a" size ="30" placeholder="enter a number" /> </td>

@@ -37,12 +37,12 @@ $question = array(
 			width: 700px;
 			margin-left:400px;
 			padding: 15px;
-			border: 2px solid grey;
 			border-radius: 10px;
+			background-color: #ffddb3;
         }
 		.qus{
 			text-align: left;
-			margin-left: 130px;
+			margin-left: 100px;
 			background-color: #669966;
 			color: white;
 			width: 500px;
@@ -60,25 +60,20 @@ $question = array(
 			margin-left: 170px;
 		}
 		.pre{
-			font-size: 1em;
-			height: 40px;
-			width: 130px;
-			background-color: lightyellow;
+			font-size: 0.8em;
+			background-color:#ffbbd3;
 			 box-shadow: 2px 2px grey;
 			 border-radius: 5px;
-			margin-left: 150px;
 		}
 		.pre a{
 			text-decoration: none;
 		}
 		.submit{
-			font-size: 1em;
-			height: 40px;
-			width: 130px;
-			background-color: lightyellow;
+			font-size: 0.8em;
+			background-color: #ffbbd3;
 			 box-shadow: 2px 2px grey;
 			 border-radius: 5px;
-	
+			 
 		}
 		.submit a{
 			text-decoration: none;
@@ -88,7 +83,7 @@ $question = array(
 	<h1 align="center">Quiz</h1>
 </head>
 <body>
-<form class="quiz" action="page1.php" method="_GET">
+<form class="quiz" action="page1.php" method="_POST">
 		<?php foreach ($question as $key => $value){ ?>
 		
 		<h3 class="qus">Question: <?php echo $value['content'] ?></h3> 
@@ -98,8 +93,9 @@ $question = array(
 				<input class="chs" type="radio"/><label name="q1" id="q1d"> </label><?php echo $value['d'] ?>
 				
 		<?php } ?>
-<button class="pre"><a href="page1.php">Previous Page</a></button>
-<button class="submit"><a href="page3_w2.php">Submit</a></button>
+
 	</form>
+<h3 align="center"><button class="pre"><a href="page1.php">Previous Page</a></button></h3>
+<h3 align="center"><button class="submit"><a href="page3_w2.php">Submit</a></button></h3>
 </body>
 </html>

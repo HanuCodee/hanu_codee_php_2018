@@ -1,6 +1,19 @@
 <?php
+<<<<<<< HEAD:loanntb/equation/equation1.php
+include ('function.php');
+    
+// if (isset($_POST['button'])) {
+    if (isset($_POST['number_a']) && (isset($_POST['number_b']))) {
+        $a = $_POST['number_a'];
+        $b = $_POST['number_b'];
+        equation1($a, $b, $error);
+    }
+if (isset($_POST['back'])) {
+    header("Location:home.php");
+=======
 if (isset($_POST['button'])) {
 include 'function.php';
+>>>>>>> de0e1758b8b1d27743502bc99247ab8352e32d39:loanntb/equation1.php
 }
 ?>
 <!DOCTYPE html>

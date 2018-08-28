@@ -9,6 +9,11 @@ $mark = 0;
 
         if (isset($_POST[$option_name])) {
             $option = $_POST[$option_name];
+<<<<<<< HEAD
+            echo $option;
+            array_push($user_answers, $option);
+=======
+>>>>>>> de0e1758b8b1d27743502bc99247ab8352e32d39
         } else {
             $option = null;
         }

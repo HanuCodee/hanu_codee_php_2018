@@ -1,8 +1,26 @@
 <?php
 session_start();
 
+$page1_key = ["C", "B", "A"];
+$page2_key = ["D", "C", "B", "A", "D"];
+$mark1 = 0;
+$mark2 = 0;
+$mark_sum = 0;
+
+for ($i = 0; $i < $_SESSION['no_of_ques_pg1']; $i++) {
+    if ($_SESSION['page1_option_list'][$i] == $page1_key[$i]) {
+        $mark1++;
+    }
+}
+
+for ($i = 0; $i < $_SESSION['no_of_ques_pg2']; $i++) {
+    if ($_SESSION['page2_option_list'][$i] == $page2_key[$i]) {
+        $mark2++;
+    }
+}
+
+$mark_sum = $mark1 + $mark2;
 $ques_sum = $_SESSION['no_of_ques_pg1'] + $_SESSION['no_of_ques_pg2'];
-$mark_sum = $_SESSION['page1_mark'] + $_SESSION['page2_mark'];
 $message = '';
 
 if ($mark_sum < 4) {

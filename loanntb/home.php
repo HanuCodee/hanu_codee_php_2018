@@ -1,8 +1,14 @@
 <?php
 if (isset($_POST['1st'])) {
+<<<<<<< HEAD:loanntb/equation/home.php
+    header("Location: equation1.php");
+} else if (isset ($_POST['2nd'])) {
+    header("Location: equation2.php");
+=======
     header("Location: http://localhost/codee/week3/equation1.php");
 } else if (isset ($_POST['2nd'])) {
     header("Location: http://localhost/codee/week3/equation2.php");
+>>>>>>> de0e1758b8b1d27743502bc99247ab8352e32d39:loanntb/home.php
 }
 
 /* note w3 (about array)

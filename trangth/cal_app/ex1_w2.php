@@ -7,7 +7,7 @@ if (isset ($_GET['a']) && ($_GET['b'])) {
     if(is_numeric($a) && is_numeric($b)){
         include ('function_cal.php');
         $root = equation1($a, $b);
-		/* if ($a == 0) {
+		/** if ($a == 0) {
 			if ($b == 0) { 
 				$msg=  "Many roots" ;
 				} else {
@@ -16,7 +16,8 @@ if (isset ($_GET['a']) && ($_GET['b'])) {
  		} else { 
  			$nghiem = -($b)/$a ;
 			$msg = "Root is: ". $nghiem;
-			} */
+			} 
+        */
     } else{
     $error = "a b are numeric";
     }
@@ -36,9 +37,9 @@ if (isset ($_GET['a']) && ($_GET['b'])) {
                 height: 300px;
                 margin-left: 530px;
                 padding: 15px;
-                border: 2px solid green;
                 background-color: lightblue;
                 text-align: center;  
+                border-radius: 5px;
             }
             .nhap{
                 background-color: #ffddb3;
@@ -47,8 +48,7 @@ if (isset ($_GET['a']) && ($_GET['b'])) {
                 height: 30px;
             }
             .khung {
-                background: #ffeea3;
-                border: 2px solid green ;
+                border-radius: 3px;
             }
             .error{
                 text-align: center;
@@ -67,9 +67,9 @@ if (isset ($_GET['a']) && ($_GET['b'])) {
          	<h1 style="font-family:courier; color:green; text-align: center;">Equation 1: ax+b=0 </h1>
          <form class="eq1" action="ex1_w2.php" method="_GET">
             <h3 class = "error"> <?php echo $error ?> </h3>
-        <table align="center" cellpadding="8" cellspacing="8" border="2" >
-        	<tr>
-        		<td class="khung"> Enter a </td>
+        <table align="center" cellpadding="8" cellspacing="8" >
+            <tr>
+        		<td class="khung" >Enter a</td>
         		<td> <input class="nhap" type="text" name ="a" size ="30" placeholder="enter a number" /> </td>
         	</tr>
         	<tr>
