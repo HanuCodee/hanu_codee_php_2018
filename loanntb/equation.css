@@ -1,0 +1,47 @@
+header {
+    font: bold 1.5em "Courier New";
+    background: #cce0ff;
+    margin: 80px 100px 20px 100px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #b3d1ff;
+}
+body {
+    font: normal 1em "Courier New";
+}
+.equa {
+    background: #e6f0ff;
+    margin: 20px 100px 50px 100px;
+    padding: 40px 100px 50px 100px;
+    text-align: center;
+    border: 1px solid #cce5ff;
+}
+label {
+    font-weight: bold;
+}
+input {
+    margin: 10px;
+    padding: 5px;
+}
+button {
+    margin-top: 10px;
+    font: bold 1em "Courier New";
+    color: white;
+    background: #4d94ff;
+    border: 1px solid #4d94ff;
+    padding: 5px;
+}
+button:hover {
+    background: #005ce6;
+    box-shadow: 5px 8px 8px 5px rgba(0,0,0,0.24),5px 8px 8px 5px rgba(0,0,0,0.19);
+}
+#result {
+    font: bold 1em "Courier New";
+    color: #009933;
+    margin-top: 30px; 
+}
+#error {
+    font: bold 1em "Courier New";
+    color: red;
+    margin-top: 30px; 
+}
