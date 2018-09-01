@@ -31,6 +31,7 @@ if ($mark_sum < 4) {
     $message = 'Bạn cần được bảo tồn và nhân giống!';
 }
 
+session_destroy();
 ?>
 <!DOCTYPE html>
 <html>

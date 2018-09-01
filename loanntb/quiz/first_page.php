@@ -43,11 +43,7 @@ if (isset($_POST['cont'])) {
     get_answer();
     $_SESSION['page1_option_list'] = $user_answers;
     $_SESSION['no_of_ques_pg1'] = $no_of_ques;
-<<<<<<< HEAD
     header("Location: second_page.php");
-=======
-    header("Location: http://localhost/codee/week3/quiz/second_page.php");
->>>>>>> de0e1758b8b1d27743502bc99247ab8352e32d39
 }
 
 ?>
@@ -79,18 +75,19 @@ if (isset($_POST['cont'])) {
                         </th>
                     </tr>
                     <tr>
-                        <td><input type="radio" name="option<?= $i; ?>" value="A"><?php echo $ques['A']; ?></td>
+                        <td><input type="radio" name="option<?= $i; ?>" value="A" <?php if ($_SESSION['page1_option_list'][$i] == "A") { echo "checked";}?>><?php echo $ques['A']; ?></td>
                     </tr>
                     <tr>
-                        <td><input type="radio" name="option<?= $i; ?>" value="B"><?php echo $ques['B']; ?></td>
+                        <td><input type="radio" name="option<?= $i; ?>" value="B" <?php if ($_SESSION['page1_option_list'][$i] == "B") { echo "checked";}?>><?php echo $ques['B']; ?></td>
                     </tr>
                     <tr>
-                        <td><input type="radio" name="option<?= $i; ?>" value="C"><?php echo $ques['C']; ?></td>
+                        <td><input type="radio" name="option<?= $i; ?>" value="C" <?php if ($_SESSION['page1_option_list'][$i] == "C") { echo "checked";}?>><?php echo $ques['C']; ?></td>
                     </tr>
                     <tr>
-                        <td><input type="radio" name="option<?= $i; ?>" value="D"><?php echo $ques['D']; ?></td>
+                        <td><input type="radio" name="option<?= $i; ?>" value="D" <?php if ($_SESSION['page1_option_list'][$i] == "D") { echo "checked";}?>><?php echo $ques['D']; ?></td>
                     </tr>
-                        <?php } ?>
+                            
+                        <?php var_dump($_SESSION['page1_option_list']);} ?>
                     </tr>
                 </table>
                 <button type="submit" name="cont">Continue</button>

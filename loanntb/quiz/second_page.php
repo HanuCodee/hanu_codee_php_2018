@@ -9,10 +9,6 @@ $list = array(
     array("Q4" => "Q5", "A" => "A", "B" => "B", "C" => "C", "D" => "D")
 );
 
-<<<<<<< HEAD
-=======
-$order = 0;
->>>>>>> de0e1758b8b1d27743502bc99247ab8352e32d39
 $no_of_ques = count($list);
 $user_answers = [];
 
@@ -47,7 +43,6 @@ if (isset($_POST['submit'])) {
     get_answer();
     $_SESSION['page2_option_list'] = $user_answers;
     $_SESSION['no_of_ques_pg2'] = $no_of_ques;
-<<<<<<< HEAD
     header("Location: submit.php");
 }
 
@@ -55,9 +50,6 @@ if (isset($_POST['return'])) {
     get_answer();
     $_SESSION['page2_option_list'] = $user_answers;
     header("Location: first_page.php");
-=======
-    header("Location: http://localhost/codee/week3/quiz/submit.php");
->>>>>>> de0e1758b8b1d27743502bc99247ab8352e32d39
 }
 
 ?>
