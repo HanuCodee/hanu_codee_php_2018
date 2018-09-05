@@ -1,5 +1,5 @@
 body {
-	background-image: url(img/background.jpg);
+	background-image: url(background.jpg);
 	font-size: 1em;
 	font: Georgia, "Times New Roman", Times, serif;
 	text-align: left;
@@ -24,9 +24,9 @@ body {
 	background-color: pink;
 }
 .const{
-	width: 25px;
-	height: 25px;
-	box-shadow: 2px darkgrey;
+	width: 40px;
+	height: 40px;
+	box-shadow: 4px darkgrey;
 }
 .noti{
 	margin-left: 25%;

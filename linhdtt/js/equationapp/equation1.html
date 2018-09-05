@@ -2,6 +2,32 @@
     function validate(param){
         var param,message;
         param = document.getElementsByTagName("input");
+        if(isNaN(param) && param != ""){
+            message="Invalid input";
+            windows.alert(message);
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    //Calculation goes here
+    var a,b,x;
+    a = document.getElementById("a");
+    b = document.getElementById("b");
+
+    if(validate(a) && validate(b)){
+        if(a==0){
+            if(b==0){
+                message="The equation has many roots";
+            }else{
+                message="The equation has no root";
+            }
+        }else{
+            x = -b/a;
+            message="The equation has one root which is"+x;
+        }
+        windows.alert(message);
     }
 </script>
 <!DOCTYPE html>
@@ -15,10 +41,10 @@
     <form name="eq1" action="" method="GET" onsubmit="return validate()">
     	<h3>Enter the values of a and b in the equation ax+b=0?</h3>
 		<div align= "center">
-			<input class="const" type="number" name="a" required> x+
-			<input class="const" type="number" name="b" required> =0
+			<input class="const" type="number" name="a" id="a" required> x+
+			<input class="const" type="number" name="b" id="b" required> =0
 			<br></br>
-			<br><button class="btn" type="submit" name="btn_submit" value="Solve it!"></button></br>
+			<br><button class="btn" type="submit" name="btn_submit" onClick="return validate()">Solve it!</button></br>
         </div>
     </form>
 	<a href="index.html">Back to homepage!</a>
