@@ -1,11 +1,14 @@
 <?php
     session_start();
-    var_dump($_POST);
+    //var_dump($_POST);
     include "header.php";
-    if(isset('next')){
+    if(isset($_POST['next'])){
         for($i=1;$i<26;$i++){
             if (isset($_POST['question'.$i])){
-           $_SESSION['question'.$i]=$_POST['question'.$i];
+                $_SESSION['question'.$i]=$_POST['question'.$i];
+            }else{
+                $_SESSION['question'.$i]=null;
+            }
         }
         header('Location: page2.php');
     }
@@ -336,10 +339,10 @@
    <input name ='question25' type ='radio' value ='D'>
    <label for 'D'><?php echo 'D.'.$question25['answerD'].'<br>'; ?></label>
 <br>
-
-    <br></br>
-    <br><input  class="btn" align="middle" type="submit" name="next" value="Next >>"></br>
-    </form>
-<?php
-    include "footer.php";
+<br></br>
+<br>
+<input  class="btn" align="middle" type="submit" name="next" value="Next >>" ></br>
+</form>
+<?php 
+    include "footer.php"; 
 ?>

@@ -1,0 +1,28 @@
+<script>
+    function validate(param){
+        var param,message;
+        param = document.getElementsByTagName("input");
+    }
+</script>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Equation Solution App</title>
+	<link rel="stylesheet" type="text/css" href="theme.css">
+</head>
+<body>
+    <form name="eq1" action="" method="GET" onsubmit="return validate()">
+    	<h3>Enter the values of a and b in the equation ax+b=0?</h3>
+		<div align= "center">
+			<input class="const" type="number" name="a" required> x+
+			<input class="const" type="number" name="b" required> =0
+			<br></br>
+			<br><button class="btn" type="submit" name="btn_submit" value="Solve it!"></button></br>
+        </div>
+    </form>
+	<a href="index.html">Back to homepage!</a>
+<div class="footer">
+    <p align="center" >Copyright ©2018 by @linhanh512 </p>
+</body>
+</html>

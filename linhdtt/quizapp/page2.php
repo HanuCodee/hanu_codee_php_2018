@@ -349,8 +349,22 @@
    <input name ='question50' type ='radio' value ='D'>
    <label for 'D'><?php echo 'D.'.$question50['answerD'].'<br>'; ?></label>
 <br>
-<input class="btn" align="middle" type="button" name="back" value="<< Back">
-<input class="btn" align="middle" type="submit" name="submit" value="Submit >>"></br>
+<input class="btn" type="button" name="back" value="<< Back">
+<input class="btn" type="submit" name="submit" value="Submit >>">
+<?php
+    function validate(){
+        for($i=1;$i<26;$i++){
+            if(isset($_SESSION['question'.$i])){
+                return true;
+            }else{
+                return false;
+                die();
+            }
+        }
+    }
+    if(validate()){?>
+    <input class="btn" type="submit" name="result" value="Result"></br>
+    <?php }?>
 </form>
 <?php
     include "footer.php";
