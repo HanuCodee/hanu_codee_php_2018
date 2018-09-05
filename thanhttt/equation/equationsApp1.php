@@ -1,25 +1,11 @@
 <?php
 $result = $error = null;
 $a = $b = '';
-
+include "function.php";
 if (isset($_GET['a']) && $_GET['b']) {
     $a = $_GET['a'];
     $b = $_GET['b'];
-    if (is_numeric($a) && is_numeric($b)) {
-
-        if ($a != 0) {
-            $root = -$b / $a;
-            $result = 'root x = ' . $root;
-        } else {
-            if ($b != 0) {
-                $error = 'This equation can not be solved.';
-            } else {
-                $result = 'This equation is true with all value of x.';
-            }
-        }
-    } else {
-        $error = 'a b c must be number. ';
-    }
+    app1($a, $b, $result);
 } else {
     $error = 'a and b are required.';
 }
@@ -70,7 +56,11 @@ if (isset($_GET['a']) && $_GET['b']) {
             cursor: pointer;
         }
     </style>
+    <script>
+        function validate() {
 
+        }
+    </script>
     <body>
         <form action="" method="GET">
             <fieldset>
@@ -95,6 +85,7 @@ if (isset($_GET['a']) && $_GET['b']) {
             <br>
         </form>
         <a href="choose.php"><button class="button">Return</button></a>
+
     </body>
 </html>
 <!--Use method 'POST' and input type 'file' for sending file
