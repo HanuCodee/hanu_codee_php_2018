@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Equation 1</title>
+        <link rel="stylesheet" href="equation.css">
+    </head>
+    <body>
+        <header>
+            Equation App
+        </header>
+        <div class="equa">
+            <form name="input" method="post" onsubmit="equation1()">
+                <label>
+                    Number a:
+                </label>
+                <input name="number_a" type="text" placeholder="Enter a here"><br>
+                <label>
+                    Number b:
+                </label>
+                <input name="number_b" type="text" placeholder="Enter b here"><br>
+                <button name="button" type="submit">Quất</button><br>
+            </form>
+            <form method="post">
+                <button name="back" type="submit">Back</button>
+            </form>
+            <script>
+                var a = document.forms["input"]["number_a"].value;
+                var b = document.forms["input"]["number_b"].value;
+                var eq = x + "x" + " + " + y + " = 0";
+                var result = "a";
+                var error;
+
+                function equation1() {
+                    if (a.length == 0 || b.length == 0 || isNaN(a) || isNaN(b)) {
+                        window.alert("You must enter real numbers a and b!");
+                    } else {
+                    if (a == 0) {
+                        if (b == 0) {
+                            result = "The equation " + eq + " has many roots";
+                        } else {
+                            error = "The equation " + eq + " has no root";
+                        }
+                    } else {
+                        if (b == 0) {
+                            result = "The equation " + eq + " has one root x = 0";
+                        } else {
+                            var root = -b / a;
+                            result = "The equation " + eq + " has one root x = " + root;
+                        }
+                    }
+                    document.write(result);
+                    }
+                }
+            </script>
+            <div id="result">
+                <!-- <script>
+                    equation1();
+                    if (result !== null) {
+                    document.write(result);
+                    }
+                </script> -->
+            </div>
+            <div id="error">
+                <span id="error"></span>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>
