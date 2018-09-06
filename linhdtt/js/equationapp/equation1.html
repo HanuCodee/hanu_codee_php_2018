@@ -6,13 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="theme.css">
 </head>
 <body>
-    <form name="eq1" action="" onsubmit="return (validate(a) && validate(b))" method="POST">
+    <form name="eq1" action="" method="POST">
     	<h3>Enter the values of a and b in the equation ax+b=0?</h3>
 		<div align= "center">
 			<input class="const" type="number" name="a" id="a" required> x+
 			<input class="const" type="number" name="b" id="b" required> =0
 			<br></br>
-			<br><button class="btn" type="submit" name="btn_submit" onClick="return (validate(a) && validate(b))">Solve it!</button></br>
+			<br><button class="btn" type="button" name="btn_submit" onClick="return equation()">Solve it!</button></br>
         </div>
         <script>
             function validate(param){
@@ -22,13 +22,13 @@
                     return false;
                 }
             }
+
+            function equation(){
+                var a,b,x;
+                a = document.getElementById("a").value;
+                b = document.getElementById("b").value;
         
-            //Calculation goes here
-            var a,b,x;
-            a = document.getElementById("a").value;
-            b = document.getElementById("b").value;
-        
-            if(validate(a) && validate(b)){
+                if(validate(a) && validate(b)){
                 if(a==0){
                     if(b==0){
                         message="The equation has many roots";
@@ -40,6 +40,7 @@
                     message="The equation has one root which is"+x;
                 }
                 alert(message);
+                }
             }
         </script>
         <a href="index.html">Back to homepage!</a>
