@@ -19,18 +19,13 @@
 <a href="index.php">Back to homepage!</a>
 </form>
 <script>
-		function validate(){
-			var a,b,c,message;
-			a=document.forms["eq2"]["a"].value;
-			b=document.forms["eq2"]["b"].value;
-            c=document.forms["eq2"]["c"].value;
-			if(isNaN(a)|| isNaN(b) || isNaN(c) || a=="" || b== "" || c=="" ){
-				message="Invalid input";
-				return false;
-			}else{
-                return true;
-            }
-		}
+    function validate(param){
+        if(isNaN(param) && param == ""){
+            return false;
+        }else{
+            return true;
+        }
+    }	
 </script>
 <?php 
 	echo "<script> alert('$message'); </script>";

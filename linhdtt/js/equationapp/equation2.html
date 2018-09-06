@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Equation Solution App</title>
+	<link rel="stylesheet" type="text/css" href="theme.css">
+</head>
+<body>
+    <form name="eq2" action="" onsubmit="return (validate(a) && validate(b) && validate(c))" method="POST">
+        <h3>Enter the values of a, b and c in the equation ax<sup>2</sup> + bx + c = 0 ?</h3>
+            <div align="center">
+                <input class="const" type="number" name="a" id="a" required>x<sup>2</sup>+
+                <input class="const" type="number" name="b" id="b" required>x+
+                <input class="const" type="number" name="c" id="c" required>=0
+                <br></br>
+                <br><button class = "btn" type="submit" name="submit" onClick="return (validate(a) && validate(b) && validate(c))">Solve it!</button></br>
+            </div>
+        <script>
+            function validate(param){
+                if(isNaN(param) || param == ""){
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+        
+            //Calculation goes here
+            var a,b,c,x,x1,x2;
+            a = document.getElementById("a").value;
+            b = document.getElementById("b").value;
+            c = document.getElementById("c").value;
+        
+            if(validate(a) && validate(b) && validate(c)){
+                if (a == 0){
+                    if (b == 0){
+                        if(c == 0){
+                            message = "The equation has many roots";
+                        }else{
+                            message = "The equation has no root";
+                        }
+                    }
+		        }else{
+			        delta = b * b - 4 * a * c;
+			        if (delta == 0){
+				        x = -b / (2*a);
+				        message = "The equation has one root which is".x;
+			        }
+			        if (delta < 0){
+				        message = "The equation has no root";
+			        }
+			        if (delta > 0){
+				        x1 = (-b+sqrt(delta))/(2*a);
+				        x2 = (-b-sqrt(delta))/(2*a);
+				        message = "The equation has two roots "+x1+" and "+x2;
+                    }
+		        }
+            alert(message);
+            }
+        </script>
+    <a href="index.html">Back to homepage!</a>
+    </script>
+    </form>
+<div class="footer">
+    <p align="center" >Copyright ©2018 by @linhanh512 </p>
+</body>
+</html>
