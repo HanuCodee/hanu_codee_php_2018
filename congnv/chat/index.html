@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Hi!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .conversation {
+            min-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1 class="text-center">Hi!</h1>
+        <div class="card conversation">
+            <div class="card-body" id="messages"></div>
+        </div>
+        <form method="POST" action="">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="message" id="message" />
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary" type="button">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        $(function(){
+            $("form").submit(function(event){
+                event.preventDefault();
+                var $message = $("#message"),
+                    $messages = $("#messages");
+
+                // append my message
+                $messages.append("Me: " + $message.val() + "<br/>");
+
+                // send message to server -> bot message
+                $.ajax({
+                    url: "bot.php", 
+                    type: "post",
+                    dataType: "json",
+                    data: {message: $message.val()},
+                    success: function(result){
+                        $messages.append(result.name + "("+result.responsedAt +"): " + result.message + "<br/>");
+                    }
+                });
+                
+                // clear my message
+                $message.val("");
+            });
+        });
+    </script>
+</body>
+</html>
