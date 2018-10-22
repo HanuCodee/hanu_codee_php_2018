@@ -1,6 +1,5 @@
-<?php
+<?php 
 include ('function.php');
-
 if (isset($_POST['number_a']) && (isset($_POST['number_b']))) {
     $a = $_POST['number_a'];
     $b = $_POST['number_b'];

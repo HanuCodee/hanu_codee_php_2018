@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Giải phương trình bậc hai</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script>
+            function giai(form) {
+                var x, x2, delta, a, b, c;
+                a = parseInt(form.a.value)
+                b = parseInt(form.b.value)
+                c = parseInt(form.c.value)
+                if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                    alert("a, b, c cần điền phải là số hoặc cần phải có giá trị!");
+                } else {
+                    if (a == 0) {
+                        if (b == 0) {
+                            if (c == 0) {
+                                alert("Phương trình có vô số nghiệm!");
+                            } else {
+                                alert("Phương trình vô nghiệm!");
+                            }
+                        } else {
+                            x = -c / b;
+                            form.x.value = eval(x);
+                        }
+                    } else {
+                        delta = Math.pow(b, 2) - (4 * a * c);
+
+                        if (delta == 0) {
+                            x = -b / (2 * a);
+                            alert("Phương trình có nghiệm kép");
+                            form.x.value = eval(x)
+                        } else if (delta > 0) {
+                            alert("Phương trình có 2 nghiệm")
+                            x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                            x1 = (-b - Math.sqrt(delta)) / (2 * a);
+                            form.x.value = eval(x1);
+                            form.x2.value = eval(x2);
+                        } else {
+                            alert("Phương trình vô nghiệm do delta < 0!");
+                        }
+                    }
+                }
+            }
+        </script>    
+    </head>
+    <body>
+        <form method="post">
+            <div class="container">
+                <fieldset>
+                    <h1>Giải phương trình bậc hai</h1>
+
+                    <div class="col-sm-6">
+                        <p>
+
+                            <input autofocus="true" type="number" style="width: 50px" name="a" id="a" value=""> x <sup>2</sup>
+                            + <input type="number" style="width: 50px" name="b" id="b" value="">x
+                            +<input type="number" style="width: 50px" name="c" id="c" value=""> = 0
+                        </p>
+
+                        <br>Đáp số:
+                        <center>
+                            <input type="text" name="x" value=""><br>
+                            <br><input type="text" name="x2" value="">
+                        </center>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-info" onclick="giai(this.form)">Tính</button>                
+                    </div><br>
+
+
+                </fieldset>
+            </div>
+        </form>
+    </body>
+</html>

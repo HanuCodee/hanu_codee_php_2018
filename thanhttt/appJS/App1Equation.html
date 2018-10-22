@@ -1,20 +1,20 @@
 <html>
     <head>
-        <title>Giải phuong trình bậc nhất</title>
-        <style>             
-            legend{
-                font-family: arial;
-                font-size: 200%;
-                font-weight: bold;
-                color: lightblue;
-            }                
-        </style>
+        <meta charset="UTF-8">
+        <title>Giải phương trình bậc nhất</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <script>
             function giai(form) {
                 var x, a, b;
                 a = parseInt(form.a.value)
-                b = parseInt(form.b.value)
+                b = parseInt(form.b.value)                
+                if(isNaN(a) || isNaN(b) ||isEmpty(a)){
+                    alert("a, b cần điền hoặc phải là số hoặc phải có giá trị!");
+                } else {
                 if (a == 0) {
                     if (b == 0) {
                         alert("Phương trình có vô số nghiệm!");
@@ -26,25 +26,39 @@
                     form.x.value = eval(x);
                 }
             }
+        }
         </script>    
     </head>
     <body>
         <form method="post">
-            <center>
-                <legend>ax + b = 0</legend>
-                <p>   
-                    <label for="a">Nhập giá trị a: </label>
-                    <input type="text" name="a" value="" placeholder="Nhập a...">
-                    <!--'dk ? a : b'-->
-                </p>
-                <p>
-                    <label for="b">Nhập giá trị b: </label>
-                    <input type="text" name="b" value="" placeholder="Nhập b...">
-                </p>
-                <br>Đáp số:
-                <input type="text" name="x" value="">
-                <input type="button" value="Tính" onclick="giai(this.form)">
-            </center>
+            <div class="container">
+                <fieldset>
+                    <h1>Giải phương trình bậc nhất</h1>
+                    <!--                <p>   
+                                        <label for="a">Nhập giá trị a: </label>
+                                        <input type="text" name="a" value="" placeholder="Nhập a...">
+                                        'dk ? a : b'
+                                    </p>
+                                    <p>
+                                        <label for="b">Nhập giá trị b: </label>
+                                        <input type="text" name="b" value="" placeholder="Nhập b...">
+                                    </p>-->
+                    <div class="col-sm-6">
+                        <p>
+                            <input autofocus="true" type="text" style="width: 30px" name="a" id="a" value=""> x 
+                            + <input type="text" style="width: 30px" name="b" id="b" value=""> = 0
+                        </p>
+                        <br>Đáp số:
+                        <input type="text" name="x" value=""> 
+                    </div>
+
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-info" onclick="giai(this.form)">Tính</button>                
+                    </div><br>
+
+
+                </fieldset>
+            </div>
         </form>
     </body>
 </html>
